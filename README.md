@@ -1,24 +1,6 @@
-# README
+# pub_rails_practice_6
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## TODO
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Rails に検索機能を実装してみる  
+GET: /todos に対して、検索条件を指定して取得できるようにする
