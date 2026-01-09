@@ -5,6 +5,12 @@ class TodosController < ApplicationController
   def index
     @todos = Todo.all
 
+    # クエリパラメータ
+    name = params[:name].present? ? params[:name] : nil
+    content = params[:content].present? ? params[:content] : nil
+    is_completed = params[:is_completed] == "true" ? true : params[:is_completed] == "false" ? false : nil
+
+
     render json: @todos
   end
 
