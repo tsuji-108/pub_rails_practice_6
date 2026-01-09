@@ -3,13 +3,22 @@ class TodosController < ApplicationController
 
   # GET /todos
   def index
-    @todos = Todo.all
-
     # クエリパラメータ
     name = params[:name].present? ? params[:name] : nil
     content = params[:content].present? ? params[:content] : nil
     is_completed = params[:is_completed] == "true" ? true : params[:is_completed] == "false" ? false : nil
 
+    puts name, content, is_completed
+
+    # @todos = Todo.all
+    @todos = Todo.all
+    if name
+      @todos = @todos.where("name LIKE ?", "%#{ActiveRecord::Base.sanitize_sql_like(name)}%")
+    end
+    if content
+      @todos = @todos.where("content LIKE ?", "%#{ActiveRecord::Base.sanitize_sql_like(content)}%")
+    end
+    @todos = @todos.where(is_completed: is_completed) unless is_completed.nil?
 
     render json: @todos
   end
