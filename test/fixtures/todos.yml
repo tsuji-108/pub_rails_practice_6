@@ -3,9 +3,9 @@
 one:
   name: MyString
   content: MyText
-  is_completed: MyString
+  is_completed: true
 
 two:
   name: MyString
   content: MyText
-  is_completed: MyString
+  is_completed: false
