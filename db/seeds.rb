@@ -19,7 +19,7 @@ ActiveRecord::Base.transaction do
     Todo.find_or_create_by!(name: name) do |todo|
       todo.content = "This is the content for seed TODO ##{idx}."
       # Store completion state as string to match schema
-      todo.is_completed = (idx % 5 == 0) ? "true" : "false"
+      todo.is_completed = (idx % 5 == 0) ? true : false
     end
   end
 end
