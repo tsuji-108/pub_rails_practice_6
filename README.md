@@ -17,9 +17,9 @@ GET: /todos に対して、検索条件を指定して取得できるように�
 5. rails db:seed を実行する
 6. opensearch を起動する
    - brew services start opensearch
-5. rails s を実行する
+7. rails s を実行する
    - もろもろ正しく実装できているなら、http://127.0.0.1:3000/ にて todo 一覧が確認できる
-7. （開発が終了したなら…）opensearch を終了する
+8. （開発が終了したなら…）opensearch を終了する
    - brew services stop opensearch
 
 ## コマンド
@@ -35,10 +35,11 @@ brew 経由で elasticsearch を追加
 
 ### opensearch
 
-| コマンド                       | 内容              |
-| ------------------------------ | ----------------- |
-| brew services start opensearch | OpenSearch の起動 |
-| brew services stop opensearch  | OpenSearch の終了 |
+| コマンド                         | 内容                |
+| -------------------------------- | ------------------- |
+| brew services start opensearch   | OpenSearch の起動   |
+| brew services restart opensearch | OpenSearch の再起動 |
+| brew services stop opensearch    | OpenSearch の終了   |
 
 ### rails
 
