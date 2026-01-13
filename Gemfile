@@ -48,3 +48,8 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
+
+gem "searchkick"
+
+gem "elasticsearch"   # select one
+gem "opensearch-ruby" # select one

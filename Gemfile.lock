@@ -99,10 +99,24 @@ GEM
     dotenv (3.2.0)
     drb (2.2.3)
     ed25519 (1.4.0)
+    elastic-transport (8.4.1)
+      faraday (< 3)
+      multi_json
+    elasticsearch (9.2.0)
+      elastic-transport (~> 8.3)
+      elasticsearch-api (= 9.2.0)
+    elasticsearch-api (9.2.0)
+      multi_json
     erb (6.0.1)
     erubi (1.13.1)
     et-orbi (1.4.0)
       tzinfo
+    faraday (2.14.0)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-net_http (3.4.2)
+      net-http (~> 0.5)
     ffi (1.17.3-aarch64-linux-gnu)
     ffi (1.17.3-aarch64-linux-musl)
     ffi (1.17.3-arm-linux-gnu)
@@ -157,6 +171,9 @@ GEM
     minitest (6.0.1)
       prism (~> 1.5)
     msgpack (1.8.0)
+    multi_json (1.19.1)
+    net-http (0.9.1)
+      uri (>= 0.11.1)
     net-imap (0.6.2)
       date
       net-protocol
@@ -188,6 +205,9 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.0-x86_64-linux-musl)
       racc (~> 1.4)
+    opensearch-ruby (3.4.0)
+      faraday (>= 1.0, < 3)
+      multi_json (>= 1.0)
     ostruct (0.6.3)
     parallel (1.27.0)
     parser (3.3.10.0)
@@ -283,6 +303,8 @@ GEM
     ruby-vips (2.3.0)
       ffi (~> 1.12)
       logger
+    searchkick (6.0.3)
+      activemodel (>= 7.2)
     securerandom (0.4.1)
     solid_cable (3.0.12)
       actioncable (>= 7.2)
@@ -354,11 +376,14 @@ DEPENDENCIES
   brakeman
   bundler-audit
   debug
+  elasticsearch
   image_processing (~> 1.2)
   kamal
+  opensearch-ruby
   puma (>= 5.0)
   rails (~> 8.1.1)
   rubocop-rails-omakase
+  searchkick
   solid_cable
   solid_cache
   solid_queue
